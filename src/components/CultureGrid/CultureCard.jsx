@@ -12,7 +12,7 @@ const CultureCard = ({ event, onSelect, searchKeyword }) => {
                 <img
                     src={event.MAIN_IMG}
                     alt={event.TITLE}
-                    className="w-full h-110 object-cover transition duration-300 group-hover:scale-105"
+                    className="w-full h-110 object-cover transition duration-300 origin-center group-hover:scale-105"
                 />
                 <FavoriteButton event={event} />
             </div>

@@ -63,7 +63,7 @@ const ExplorePage = () => {
         return <div className="p-20 text-center text-red-500">에러 발생</div>;
 
     return (
-        <section className="inner">
+        <section className="inner pb-40">
             <div className="py-25">
                 <h2 className="relative font-[Pretendard] font-bold text-4xl text-center after:absolute after:content-[' '] after:left-1/2 after:-translate-x-1/2 after:-bottom-7 after:w-18 after:h-1 after:bg-main-green">
                     Explore
@@ -104,6 +104,7 @@ const ExplorePage = () => {
                 <Pagination
                     page={page}
                     totalPages={totalPages}
+                    onFirst={() => setPage(1)}
                     onPrev={() => setPage((p) => Math.max(1, p - 1))}
                     onNext={() => setPage((p) => Math.min(totalPages, p + 1))}
                 />
