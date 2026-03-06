@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-[url('/images/bg_footer.png')] bg-cover bg-center bg-no-repeat h-60 flex items-center font-[Pretendard]">
+        <footer className="bg-[url('/images/bg_footer.png')] bg-cover bg-center bg-no-repeat h-60 flex items-center">
             <div className="inner flex justify-between items-center">
                 <div className="font-extrabold text-4xl">
                     2026 SEOUL

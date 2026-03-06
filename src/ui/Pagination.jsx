@@ -1,6 +1,6 @@
 const Pagination = ({ page, totalPages, onFirst, onPrev, onNext }) => {
     return (
-        <div className="relative font-[Pretendard] mt-15 flex justify-between items-center">
+        <div className="relative mt-15 flex justify-between items-center">
             <button
                 onClick={onFirst}
                 disabled={page <= 1}

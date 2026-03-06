@@ -4,11 +4,9 @@ import { BiSolidHeart, BiHeart } from 'react-icons/bi';
 const InfoRow = ({ label, value }) => {
     if (!value) return null;
     return (
-        <div className="flex border-b border-gray-200 py-6">
-            <dt className="w-20 font-bold pl-4">{label}</dt>
-            <dd className="font-[Pretendard] text-text text-base pr-4">
-                {value}
-            </dd>
+        <div className="flex border-b border-stroke py-6">
+            <dt className="w-20 pl-4 text-base font-bold">{label}</dt>
+            <dd className="text-text text-base pr-4">{value}</dd>
         </div>
     );
 };
@@ -21,7 +19,7 @@ const ModalInfo = ({ event }) => {
     return (
         <>
             <div className="flex justify-between">
-                <p className="text-main-green font-bold bg-white border border-main-green rounded-lg px-4 py-1">
+                <p className="flex items-center justify-center text-main-green border border-main-green rounded-lg px-4 py-1 font-bold">
                     {event.CODENAME}
                 </p>
                 <button

@@ -22,11 +22,11 @@ const CultureModal = ({ event, onClose }) => {
                         <BiSolidXSquare className="text-main-green" />
                     </button>
 
-                    <h2 className="text-2xl font-bold text-center">
+                    <h2 className="text-2xl font-bold text-center font-[MaruBuri]">
                         {event.TITLE}
                     </h2>
 
-                    <p className="w-full h-[1px] bg-main-green my-10"></p>
+                    <p className="w-full h-[1px] bg-main-green mt-9 mb-10"></p>
 
                     <div className="flex flex-col gap-13">
                         <div className="flex gap-10 items-start">
@@ -44,8 +44,10 @@ const CultureModal = ({ event, onClose }) => {
 
                         {event.PROGRAM?.trim() && (
                             <div>
-                                <h3 className="font-bold mb-2">프로그램소개</h3>
-                                <p className="font-[Pretendard] text-text text-base">
+                                <h3 className="text-lg font-bold mb-2">
+                                    프로그램소개
+                                </h3>
+                                <p className="text-text text-base">
                                     {event.PROGRAM}
                                 </p>
                             </div>
@@ -53,8 +55,10 @@ const CultureModal = ({ event, onClose }) => {
 
                         {event.PLAYER?.trim() && (
                             <div>
-                                <h3 className="font-bold mb-2">출연자 정보</h3>
-                                <p className="font-[Pretendard] text-text text-base">
+                                <h3 className="text-lg font-bold mb-2">
+                                    출연자 정보
+                                </h3>
+                                <p className="text-text text-base">
                                     {event.PLAYER}
                                 </p>
                             </div>
@@ -67,7 +71,7 @@ const CultureModal = ({ event, onClose }) => {
                                 href={event.ORG_LINK}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-main-blue text-white font-bold py-4 w-70 text-center m-auto hover:bg-main-blue/80"
+                                className="bg-main-blue text-white py-4 w-70 text-center m-auto hover:bg-main-blue/80"
                             >
                                 홈페이지
                             </a>

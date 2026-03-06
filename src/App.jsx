@@ -11,7 +11,7 @@ const App = () => {
 
     useEffect(() => {
         const onScroll = () => {
-            setScrolled(window.scrollY > 550);
+            setScrolled(window.scrollY > 500);
         };
         window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);

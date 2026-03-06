@@ -62,7 +62,7 @@ const FilterBar = ({
                 type="button"
                 onClick={onReset}
                 disabled={!isFiltered}
-                className={`py-4 w-full transition bg-main-blue text-white
+                className={`py-4 w-full transition bg-main-blue text-white text-lg font-bold 
                 ${
                     isFiltered
                         ? 'hover:bg-main-blue/80 text-white'

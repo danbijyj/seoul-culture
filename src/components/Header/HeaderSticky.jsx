@@ -4,7 +4,7 @@ const HeaderSticky = ({ activeTab, setActiveTab, scrolled }) => {
     if (!scrolled) return null;
 
     return (
-        <header className="fixed top-0 left-0 w-full h-20 z-50">
+        <header className="fixed top-0 left-0 w-full h-17 z-50">
             <div className="absolute inset-0 bg-[url('/images/bg_small.png')] bg-cover bg-center opacity-90" />
 
             <div className="absolute inset-0 backdrop-blur-xs" />
@@ -15,7 +15,9 @@ const HeaderSticky = ({ activeTab, setActiveTab, scrolled }) => {
                     setActiveTab={setActiveTab}
                     scrolled
                 />
-                <h1 className="text-2xl font-bold">서울시 문화행사</h1>
+                <h1 className="text-2xl font-bold font-[MaruBuri]">
+                    2026 서울시 문화행사
+                </h1>
             </div>
         </header>
     );
