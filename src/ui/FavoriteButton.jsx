@@ -12,12 +12,12 @@ const FavoriteButton = ({ event }) => {
                 e.stopPropagation();
                 toggleFavorite(event);
             }}
-            className="absolute top-2 right-2 flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 backdrop-blur-xs text-2xl hover:bg-white/20 transition"
+            className="absolute top-2 right-2 flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 backdrop-blur-xs text-2xl hover:bg-white/30 transition cursor-pointer"
         >
             {isFavorite ? (
-                <BiSolidHeart />
+                <BiSolidHeart className="text-red-600" />
             ) : (
-                <BiHeart className="text-main-green" />
+                <BiHeart />
             )}
         </button>
     );
