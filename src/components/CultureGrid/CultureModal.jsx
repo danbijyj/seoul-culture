@@ -19,7 +19,7 @@ const CultureModal = ({ event, onClose }) => {
                         className="absolute top-10 right-10 text-5xl"
                         onClick={onClose}
                     >
-                        <BiSolidXSquare className="text-main-green" />
+                        <BiSolidXSquare className="text-main-green cursor-pointer" />
                     </button>
 
                     <h2 className="text-2xl font-bold text-center font-[MaruBuri]">

@@ -24,7 +24,7 @@ const ModalInfo = ({ event }) => {
                 </p>
                 <button
                     onClick={() => toggleFavorite(event)}
-                    className="text-3xl"
+                    className="text-3xl cursor-pointer"
                 >
                     {isFavorite ? (
                         <BiSolidHeart className="text-red-600" />
