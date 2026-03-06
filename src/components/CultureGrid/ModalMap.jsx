@@ -1,9 +1,31 @@
 import { useEffect, useRef } from 'react';
 
 const ModalMap = ({ event }) => {
+    const mapRef = useRef(null);
+
+    useEffect(() => {
+        if (!event?.LAT || !event?.LOT) return;
+        window.kakao.maps.load(() => {
+            const container = mapRef.current;
+            const options = {
+                center: new window.kakao.maps.LatLng(event.LAT, event.LOT),
+                level: 3,
+            };
+            const map = new window.kakao.maps.Map(container, options);
+            const markerPosition = new window.kakao.maps.LatLng(
+                event.LAT,
+                event.LOT,
+            );
+            const marker = new window.kakao.maps.Marker({
+                position: markerPosition,
+            });
+            marker.setMap(map);
+        });
+    }, [event]);
+
     return (
-        <>
-            <div className="flex justify-between items-center">
+        <div className="flex flex-col gap-0">
+            <div className="flex justify-between items-center mb-4">
                 <h3 className="font-bold">위치</h3>
                 <a
                     href={`https://map.kakao.com/link/map/${event.PLACE},${event.LAT},${event.LOT}`}
@@ -14,8 +36,11 @@ const ModalMap = ({ event }) => {
                     카카오 지도
                 </a>
             </div>
-            <div></div>
-        </>
+            <div
+                ref={mapRef}
+                className="w-full h-[320px] border border-main-green"
+            ></div>
+        </div>
     );
 };
 
