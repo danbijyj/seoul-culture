@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import ExplorePage from './pages/ExplorePage';
 import FavoritesPage from './pages/FavoritesPage';
 import HeaderSticky from './components/Header/HeaderSticky';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
     const [activeTab, setActiveTab] = useState('explore');
@@ -27,6 +28,7 @@ const App = () => {
             <main>
                 {activeTab === 'explore' ? <ExplorePage /> : <FavoritesPage />}
             </main>
+            <Footer />
         </>
     );
 };

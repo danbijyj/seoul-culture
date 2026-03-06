@@ -1,12 +1,8 @@
 import Tabs from './Tabs';
-import HeaderBg from '/images/bg_main.png';
 
 const Header = ({ activeTab, setActiveTab }) => {
     return (
-        <header
-            className="h-[550px] bg-cover bg-center"
-            style={{ backgroundImage: `url(${HeaderBg})` }}
-        >
+        <header className="h-[550px] bg-[url('/images/bg_main.png')] bg-cover bg-center bg-no-repeat">
             <div className="inner h-full text-white flex items-center">
                 <div className="w-full">
                     <p className="font-[Pretendard] text-right text-4xl font-bold opacity-70 mb-6">
