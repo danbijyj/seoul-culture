@@ -2,7 +2,7 @@ const API_KEY = import.meta.env.VITE_SEOUL_KEY;
 
 const BASE_URL = import.meta.env.DEV
     ? `/seoul/${API_KEY}`
-    : `https://openapi.seoul.go.kr:8088/${API_KEY}`;
+    : `https://openapi.seoul.go.kr/${API_KEY}`;
 
 export const fetchCultureData = async () => {
     const res = await fetch(`${BASE_URL}/json/culturalEventInfo/1/1000/`);
