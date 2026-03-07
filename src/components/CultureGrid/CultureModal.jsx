@@ -1,14 +1,42 @@
+import { useEffect } from 'react';
 import { BiSolidXSquare } from 'react-icons/bi';
 import ModalMap from './ModalMap';
 import ModalInfo from './ModalInfo';
 
 const CultureModal = ({ event, onClose }) => {
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                onClose();
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [onClose]);
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
+
     if (!event) return null;
+
+    const handleOverlayClick = (e) => {
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    };
 
     return (
         <div
             className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
-            onClick={onClose}
+            onClick={handleOverlayClick}
+            role="dialog"
+            aria-modal="true"
         >
             <div
                 className=" bg-white shadow-2xl rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden"
@@ -18,6 +46,7 @@ const CultureModal = ({ event, onClose }) => {
                     <button
                         className="absolute top-10 right-10 text-5xl"
                         onClick={onClose}
+                        aria-label="모달 닫기"
                     >
                         <BiSolidXSquare className="text-main-green cursor-pointer" />
                     </button>
