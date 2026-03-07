@@ -6,7 +6,7 @@ const SearchBar = ({ value, onChange }) => {
                 placeholder="문화행사를 검색하세요."
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
-                className="w-full px-6 py-4 border-3 border-main-green text-lg"
+                className="w-full px-6 py-4 border-3 border-main-green text-lg focus:outline-none"
             />
         </div>
     );

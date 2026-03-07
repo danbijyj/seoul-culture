@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import Header from './components/Header/Header';
+import HeaderSticky from './components/Header/HeaderSticky';
 import ExplorePage from './pages/ExplorePage';
 import FavoritesPage from './pages/FavoritesPage';
-import HeaderSticky from './components/Header/HeaderSticky';
 import Footer from './components/Footer/Footer';
+import TopButton from './components/TopButton/TopButton';
 
 const App = () => {
     const [activeTab, setActiveTab] = useState('explore');
@@ -29,6 +30,7 @@ const App = () => {
                 {activeTab === 'explore' ? <ExplorePage /> : <FavoritesPage />}
             </main>
             <Footer />
+            <TopButton />
         </>
     );
 };
