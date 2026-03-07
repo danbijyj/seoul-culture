@@ -12,7 +12,7 @@ const Pagination = ({ page, totalPages, onFirst, onPrev, onNext }) => {
                 <button
                     onClick={onPrev}
                     disabled={page <= 1}
-                    className="px-20 py-4 bg-white border border-main-blue disabled:opacity-50"
+                    className="px-20 py-4 bg-white border border-main-blue disabled:opacity-50 enabled:bg-main-blue/8"
                 >
                     이전
                 </button>
