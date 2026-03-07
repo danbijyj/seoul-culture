@@ -1,16 +1,3 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+서울 열린데이터 광장의 문화행사 REST API를 활용해 공연·전시·축제 정보를 탐색할 수 있는 웹 애플리케이션입니다.<br/>
+TanStack Query를 사용해 데이터를 효율적으로 가져오고 캐싱했으며, 구/분류/요금 필터와 키워드 검색, 정렬 기능을 통해 다양한 방식으로 문화행사를 탐색할 수 있도록 구현했습니다.<br/>
+검색 입력에는 debounce를 적용해 불필요한 연산을 줄였고, Zustand 기반 즐겨찾기 기능과 모달 상세보기, 카카오 지도 연동을 통해 실제 서비스에 가까운 사용자 경험을 제공합니다.
