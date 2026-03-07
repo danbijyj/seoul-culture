@@ -24,7 +24,7 @@ const TopButton = () => {
 
     return (
         <button
-            className="fixed right-10 bottom-10 py-2 px-4 bg-main-blue/60 hover:bg-main-blue shadow-lg text-white text-xs transition z-40"
+            className="fixed right-10 bottom-10 flex flex-col items-center justify-center w-14 h-14 bg-main-blue/70 hover:bg-main-blue shadow-lg text-white text-xs transition z-40"
             onClick={scrollToTop}
         >
             <BiArrowFromBottom className="text-3xl" />
