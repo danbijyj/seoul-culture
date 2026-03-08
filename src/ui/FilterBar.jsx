@@ -1,5 +1,4 @@
 import SelectBox from './SelectBox';
-import { BiCaretDown } from 'react-icons/bi';
 
 const FilterBar = ({
     filters,
@@ -14,7 +13,11 @@ const FilterBar = ({
     );
 
     return (
-        <div className="mb-4 grid grid-cols-5 gap-6">
+        <div
+            className="mb-4 grid 
+        grid-cols-2 lg:grid-cols-5 
+        gap-2 lg:gap-6"
+        >
             <SelectBox
                 value={filters.gu}
                 onChange={(e) => onChange('gu', e.target.value)}
@@ -65,7 +68,8 @@ const FilterBar = ({
                 type="button"
                 onClick={onReset}
                 disabled={!isFiltered}
-                className={`py-4 w-full transition bg-main-blue text-white text-lg font-bold 
+                className={`col-span-2 lg:col-span-1 
+                    py-2 md:py-4 w-full transition bg-main-blue text-white text-base md:text-lg font-bold 
                 ${
                     isFiltered
                         ? 'hover:bg-main-blue/80 text-white'

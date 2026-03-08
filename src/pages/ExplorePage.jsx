@@ -63,14 +63,27 @@ const ExplorePage = () => {
         return <div className="p-20 text-center text-red-500">에러 발생</div>;
 
     return (
-        <section className="inner pb-40">
-            <div className="py-25">
-                <h2 className="relative font-bold text-4xl text-center after:absolute after:content-[' '] after:left-1/2 after:-translate-x-1/2 after:-bottom-7 after:w-18 after:h-1 after:bg-main-green">
+        <section className="inner pb-20 lg:pb-40 px-4 lg:px-0">
+            <div className="py-14 md:py-20 lg:py-25">
+                <h2
+                    className="relative font-bold text-center
+                text-2xl md:text-3xl lg:text-4xl 
+                after:absolute after:content-[' '] 
+                after:left-1/2 after:-translate-x-1/2 
+                after:-bottom-3 md:after:-bottom-5 lg:after:-bottom-7 
+                after:w-10 md:after:w-15 lg:after:w-18 
+                after:h-[2px] lg:after:h-1 
+                after:bg-main-green"
+                >
                     Explore
                 </h2>
             </div>
 
-            <article className="bg-gray-200 p-12 mb-14 rounded-2xl">
+            <article
+                className="bg-gray-200 mb-14 rounded-2xl 
+                px-4 md:px-8 lg:px-12
+                py-8 lg:py-12"
+            >
                 <SearchBar
                     value={filters.keyword}
                     onChange={(v) => updateFilter('keyword', v)}
@@ -83,7 +96,7 @@ const ExplorePage = () => {
                     onReset={handleReset}
                     defaultFilters={DEFAULT_FILTERS}
                 />
-                <div className="text-right">
+                <div className="text-right text-sm md:text-base">
                     총 <strong className="text-main-blue">{totalCount}</strong>
                     개의 문화행사가 검색되었습니다.
                 </div>
@@ -97,7 +110,7 @@ const ExplorePage = () => {
             <CultureGrid
                 data={pagedExplore}
                 onSelect={setSelected}
-                searchKeyword={filters.keyword}
+                searchKeyword={debouncedKeyword}
             />
 
             {totalPages > 1 && (

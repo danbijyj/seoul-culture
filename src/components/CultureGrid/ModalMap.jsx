@@ -31,7 +31,7 @@ const ModalMap = ({ event }) => {
                     href={`https://map.kakao.com/link/map/${event.PLACE},${event.LAT},${event.LOT}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-main-blue text-white py-2 px-5 text-center transition hover:bg-main-blue/80"
+                    className="bg-main-blue text-white py-1 md:py-2 px-5 text-center transition hover:bg-main-blue/80"
                 >
                     카카오 지도
                 </a>

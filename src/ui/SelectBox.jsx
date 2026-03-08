@@ -7,11 +7,18 @@ const SelectBox = ({ value, onChange, ariaLabel, children }) => {
                 value={value}
                 onChange={onChange}
                 aria-label={ariaLabel}
-                className="px-6 py-4 border border-main-green w-full bg-white appearance-none focus:outline-none"
+                className="border border-main-green w-full bg-white appearance-none focus:outline-none 
+                px-4 lg:px-6
+                py-2 md:py-4
+                "
             >
                 {children}
             </select>
-            <BiCaretDown className="absolute right-4 top-1/2 -translate-y-1/2 text-main-green text-xl pointer-events-none" />
+            <BiCaretDown
+                className="absolute top-1/2 -translate-y-1/2 
+            right-2 md:right-4
+            text-main-green text-xl pointer-events-none"
+            />
         </div>
     );
 };

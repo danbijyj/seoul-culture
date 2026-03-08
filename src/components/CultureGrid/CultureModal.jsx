@@ -39,27 +39,36 @@ const CultureModal = ({ event, onClose }) => {
             aria-modal="true"
         >
             <div
-                className=" bg-white shadow-2xl rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden"
+                className=" bg-white shadow-2xl rounded-2xl overflow-hidden
+                w-[95vw] lg:w-full lg:max-w-5xl 
+                max-h-[85vh] lg:max-h-[90vh]"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="relative px-15 py-25 overflow-y-auto max-h-[90vh]">
+                <div
+                    className="relative overflow-y-auto max-h-[85vh] lg:max-h-[90vh]
+                px-5 md:px-10 lg:px-15 
+                py-16 md:py-25"
+                >
                     <button
-                        className="absolute top-10 right-10 text-5xl"
+                        className="absolute 
+                        text-3xl md:text-5xl 
+                        top-4 md:top-6 lg:top-10 
+                        right-4 md:right-6 lg:right-10"
                         onClick={onClose}
                         aria-label="모달 닫기"
                     >
                         <BiSolidXSquare className="text-main-green cursor-pointer" />
                     </button>
 
-                    <h2 className="text-2xl font-bold text-center font-[MaruBuri]">
+                    <h2 className="text-lg md:text-2xl font-bold text-center font-[MaruBuri]">
                         {event.TITLE}
                     </h2>
 
-                    <p className="w-full h-[1px] bg-main-green mt-9 mb-10"></p>
+                    <hr className="w-full border-none h-[1px] bg-main-green my-7 md:my-9" />
 
                     <div className="flex flex-col gap-13">
-                        <div className="flex gap-10 items-start">
-                            <p className="w-md flex-shrink-0">
+                        <div className="flex flex-wrap justify-center gap-10 items-start">
+                            <p className="w-full md:w-md flex-shrink-0">
                                 <img
                                     src={event.MAIN_IMG}
                                     alt={event.TITLE}
@@ -100,7 +109,7 @@ const CultureModal = ({ event, onClose }) => {
                                 href={event.ORG_LINK}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-main-blue text-white py-4 w-70 text-center m-auto hover:bg-main-blue/80"
+                                className="bg-main-blue text-white py-2 md:py-4 w-45 md:w-70 text-center m-auto hover:bg-main-blue/80"
                             >
                                 홈페이지
                             </a>

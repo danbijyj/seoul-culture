@@ -4,7 +4,9 @@ const Pagination = ({ page, totalPages, onFirst, onPrev, onNext }) => {
             <button
                 onClick={onFirst}
                 disabled={page <= 1}
-                className="px-20 py-4 bg-gray-300 disabled:opacity-40"
+                className="bg-gray-300 disabled:opacity-40
+                px-3 md:px-10 lg:px-20 
+                py-1 md:py-3 lg:py-4"
             >
                 처음으로
             </button>
@@ -12,19 +14,23 @@ const Pagination = ({ page, totalPages, onFirst, onPrev, onNext }) => {
                 <button
                     onClick={onPrev}
                     disabled={page <= 1}
-                    className="px-20 py-4 bg-white border border-main-blue disabled:opacity-50 enabled:bg-main-blue/8"
+                    className="bg-white border border-main-blue disabled:opacity-50 enabled:bg-main-blue/8
+                    px-4 md:px-10 lg:px-20 
+                    py-1 md:py-3 lg:py-4"
                 >
                     이전
                 </button>
                 <button
                     onClick={onNext}
                     disabled={page >= totalPages}
-                    className="px-20 py-4 bg-main-blue text-white disabled:opacity-50"
+                    className="bg-main-blue text-white disabled:opacity-50
+                    px-4 md:px-10 lg:px-20 
+                    py-1 md:py-3 lg:py-4"
                 >
                     다음
                 </button>
             </div>
-            <div className="text-xl">
+            <div className="text-base lg:text-xl">
                 <span className="text-main-blue font-bold">{page}</span> /{' '}
                 {totalPages}
             </div>

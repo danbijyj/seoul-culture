@@ -4,7 +4,7 @@ import { BiSolidHeart, BiHeart } from 'react-icons/bi';
 const InfoRow = ({ label, value }) => {
     if (!value) return null;
     return (
-        <div className="flex border-b border-stroke py-6">
+        <div className="flex border-b border-stroke py-3 md:py-4 lg:py-6">
             <dt className="w-20 pl-4 text-base font-bold">{label}</dt>
             <dd className="text-text text-base pr-4">{value}</dd>
         </div>

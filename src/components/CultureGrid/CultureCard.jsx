@@ -22,7 +22,7 @@ const CultureCard = ({ event, onSelect, searchKeyword }) => {
                 <p className="text-xl">자세히 보기</p>
             </div>
 
-            <h3 className="text-xl font-bold mb-4 line-clamp-2 font-[MaruBuri]">
+            <h3 className="text-lg md:text-xl font-bold mb-4 line-clamp-2 font-[MaruBuri]">
                 {highlightText(event.TITLE, searchKeyword)}
             </h3>
             <p className="text-gray-600 line-clamp-1 mb-1">

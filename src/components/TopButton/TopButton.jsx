@@ -6,7 +6,7 @@ const TopButton = () => {
 
     useEffect(() => {
         const onScroll = () => {
-            const trigger = window.innerWidth <= 820 ? 80 : 100;
+            const trigger = window.innerWidth <= 768 ? 80 : 100;
             setShow(window.scrollY > trigger);
         };
         window.addEventListener('scroll', onScroll);
@@ -24,10 +24,15 @@ const TopButton = () => {
 
     return (
         <button
-            className="fixed right-10 bottom-10 flex flex-col items-center justify-center w-14 h-14 bg-main-blue/70 hover:bg-main-blue shadow-lg text-white text-xs transition z-40"
+            className="fixed right-6 lg:right-10 bottom-6 lg:bottom-10 
+            flex flex-col items-center justify-center 
+            w-10 md:w-14 h-10 md:h-14 
+            bg-main-blue/70 hover:bg-main-blue shadow-lg text-white 
+            text-[10px] md:text-xs 
+            transition z-40"
             onClick={scrollToTop}
         >
-            <BiArrowFromBottom className="text-3xl" />
+            <BiArrowFromBottom className="text-xl lg:text-3xl" />
             TOP
         </button>
     );

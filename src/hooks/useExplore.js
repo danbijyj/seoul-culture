@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { todayYMD, isOngoingOrUpcoming } from '../utils/date';
-
-const PAGE_SIZE = 9;
+import { getPageSize } from '../utils/pageSize';
 
 export const useExplore = ({
     data,
@@ -13,6 +12,7 @@ export const useExplore = ({
     page,
 }) => {
     const today = todayYMD();
+    const PAGE_SIZE = getPageSize();
 
     const exploreBase = useMemo(() => {
         const rows = data || [];
