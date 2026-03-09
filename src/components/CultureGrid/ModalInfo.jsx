@@ -5,8 +5,8 @@ const InfoRow = ({ label, value }) => {
     if (!value) return null;
     return (
         <div className="flex border-b border-stroke py-3 md:py-4 lg:py-6">
-            <dt className="w-20 pl-4 text-base font-bold">{label}</dt>
-            <dd className="text-text text-base pr-4">{value}</dd>
+            <dt className="w-1/5 pl-4 text-base font-bold">{label}</dt>
+            <dd className="w-4/5 text-text text-base pr-4">{value}</dd>
         </div>
     );
 };
