@@ -10,7 +10,7 @@ const Tabs = ({ activeTab, setActiveTab, scrolled }) => {
     const inactiveBtn = 'bg-white/30 border-white border';
 
     return (
-        <div className="flex gap-1 lg:gap-5 font-bold text-white">
+        <div className="flex gap-2 lg:gap-5 font-bold text-white">
             <button
                 onClick={() => setActiveTab('explore')}
                 className={`cursor-pointer flex flex-col items-center justify-center gap-1 lg:gap-3 ${btnSize} ${
