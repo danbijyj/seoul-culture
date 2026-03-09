@@ -2,7 +2,7 @@ import { BiHeart, BiSearch } from 'react-icons/bi';
 
 const Tabs = ({ activeTab, setActiveTab, scrolled }) => {
     const btnSize = scrolled
-        ? 'w-22 md:w-30 py-1 md:py-2 font-normal'
+        ? 'w-20 md:w-30 py-1 md:py-2 font-normal'
         : 'w-40 md:w-70 lg:w-55 h-28 md:h-35 lg:h-55 text-xl md:text-2xl lg:text-3xl';
 
     const activeBtn =
