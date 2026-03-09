@@ -20,7 +20,7 @@ const Header = ({ activeTab, setActiveTab }) => {
                             >
                                 서울시 문화행사
                             </h1>
-                            <p className="text-sm md:text-lg lg:text-xl opacity-80 leading-none mt-4 md:mt-5 lg:mt-28 font-[MaruBuri] font-bold tracking-tight md:tracking-normal">
+                            <p className="text-sm md:text-lg lg:text-xl opacity-80 leading-none mt-4 md:mt-5 lg:mt-28 font-[MaruBuri] font-bold tracking-tighter md:tracking-normal">
                                 서울문화포털에서 제공하는 서울특별시
                                 문화공간정보입니다.
                             </p>
