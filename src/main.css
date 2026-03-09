@@ -6,7 +6,6 @@
     --color-text: #333;
     --color-stroke: #ddd;
     --layout-inner: 1200px;
-    --header-bg: url('/images/bg_main.png');
 }
 
 @font-face {

@@ -67,15 +67,15 @@ const CultureModal = ({ event, onClose }) => {
                     <hr className="w-full border-none h-[1px] bg-main-green my-7 md:my-9" />
 
                     <div className="flex flex-col gap-13">
-                        <div className="flex flex-wrap justify-center gap-10 items-start">
-                            <p className="w-full md:w-md flex-shrink-0">
+                        <div className="flex flex-col lg:flex-row justify-center gap-10 items-start">
+                            <p className="w-full md:w-md flex-shrink-0 m-auto">
                                 <img
                                     src={event.MAIN_IMG}
                                     alt={event.TITLE}
                                     className="w-full h-auto object-contain"
                                 />
                             </p>
-                            <div className="flex-1">
+                            <div className="flex-1 w-full">
                                 <ModalInfo event={event} />
                             </div>
                         </div>
