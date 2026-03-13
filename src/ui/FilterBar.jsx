@@ -69,10 +69,10 @@ const FilterBar = ({
                 onClick={onReset}
                 disabled={!isFiltered}
                 className={`col-span-2 lg:col-span-1 
-                    py-2 md:py-4 w-full transition bg-main-blue cursor-pointer text-white text-base md:text-lg font-bold 
+                    py-2 md:py-4 w-full transition bg-main-blue text-white text-base md:text-lg font-bold 
                 ${
                     isFiltered
-                        ? 'hover:bg-main-blue/80 text-white'
+                        ? 'hover:bg-main-blue/80 text-white cursor-pointer'
                         : 'cursor-not-allowed'
                 }`}
             >
