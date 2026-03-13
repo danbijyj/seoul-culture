@@ -6,7 +6,7 @@ const Header = ({ activeTab, setActiveTab }) => {
             <div className="inner h-full text-white flex items-center">
                 <div className="w-full">
                     <p className="text-center lg:text-right text-2xl md:text-3xl font-bold opacity-70 mb-6 font-[MaruBuri]">
-                        2026 Seoul Culture Portal
+                        Seoul Culture Portal
                     </p>
                     <div className="flex flex-wrap justify-center lg:justify-between items-center gap-10 md:gap-14 lg:gap-0">
                         <Tabs
