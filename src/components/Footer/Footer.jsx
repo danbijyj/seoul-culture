@@ -9,7 +9,9 @@ const Footer = () => {
                 </div>
                 <div className="text-left md:text-right text-gray-600 text-sm lg:text-base">
                     <p>ⓒ 2026 Seoul Culture Portal. All rights reserved.</p>
-                    <p>Data provided by Seoul Public Data (data.seoul.go.kr)</p>
+                    <p>
+                        Data provided by Seoul Public Data (openapi.seoul.go.kr)
+                    </p>
                 </div>
             </div>
         </footer>

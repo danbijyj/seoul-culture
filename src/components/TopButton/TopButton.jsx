@@ -29,7 +29,7 @@ const TopButton = () => {
             w-10 md:w-14 h-10 md:h-14 
             bg-main-blue/70 hover:bg-main-blue shadow-lg text-white 
             text-[10px] md:text-xs 
-            transition z-40"
+            transition z-40 cursor-pointer"
             onClick={scrollToTop}
         >
             <BiArrowFromBottom className="text-xl lg:text-3xl" />
