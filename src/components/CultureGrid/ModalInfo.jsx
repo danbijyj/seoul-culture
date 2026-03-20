@@ -19,7 +19,7 @@ const ModalInfo = ({ event }) => {
     return (
         <>
             <div className="flex justify-between">
-                <p className="flex items-center justify-center text-main-green border border-main-green rounded-lg px-4 py-1 font-bold">
+                <p className="flex items-center justify-center text-main-blue border border-main-blue rounded-lg px-4 py-1 font-bold">
                     {event.CODENAME}
                 </p>
                 <button
