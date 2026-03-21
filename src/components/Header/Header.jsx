@@ -28,7 +28,7 @@ const Header = ({ activeTab, setActiveTab }) => {
             tl.fromTo(
                 line1Ref.current,
                 { y: 50, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
+                { y: 0, opacity: 0.7, duration: 0.8, ease: 'power3.out' },
             );
 
             tl.fromTo(
@@ -41,7 +41,7 @@ const Header = ({ activeTab, setActiveTab }) => {
             tl.fromTo(
                 line3Ref.current,
                 { y: 50, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
+                { y: 0, opacity: 0.7, duration: 0.8, ease: 'power3.out' },
                 '-=0.3',
             );
 
@@ -76,7 +76,7 @@ const Header = ({ activeTab, setActiveTab }) => {
                 <div className="w-full">
                     <p
                         ref={line1Ref}
-                        className="text-center lg:text-right text-2xl md:text-3xl font-bold opacity-70 mb-6 font-[MaruBuri]"
+                        className="text-center lg:text-right text-xl md:text-3xl font-bold mb-6 font-[GMarketSans]"
                     >
                         Seoul Culture Portal
                     </p>
@@ -90,14 +90,14 @@ const Header = ({ activeTab, setActiveTab }) => {
                         <div className="text-center lg:text-right">
                             <h1
                                 ref={line2Ref}
-                                className="font-bold tracking-tighter leading-none text-5xl md:text-6xl lg:text-[80px] font-[MaruBuri]
+                                className="font-bold tracking-tighter leading-none text-5xl md:text-6xl lg:text-[80px] font-[GMarketSans]
                                 "
                             >
                                 서울시 문화행사
                             </h1>
                             <p
                                 ref={line3Ref}
-                                className="text-sm md:text-lg lg:text-xl opacity-80 leading-none mt-4 md:mt-5 lg:mt-28 font-[MaruBuri] font-bold tracking-tighter md:tracking-normal"
+                                className="text-sm md:text-lg lg:text-xl leading-none mt-4 md:mt-5 lg:mt-28 font-[GMarketSans] tracking-tighter md:tracking-normal"
                             >
                                 서울문화포털에서 제공하는 서울특별시
                                 문화공간정보입니다.

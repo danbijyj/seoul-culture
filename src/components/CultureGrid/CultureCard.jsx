@@ -138,7 +138,7 @@ const CultureCard = ({ event, onSelect, searchKeyword }) => {
             </div>
 
             <div className="[transform:translateZ(40px)]">
-                <h3 className="text-lg md:text-xl font-bold mb-4 line-clamp-2 font-[MaruBuri]">
+                <h3 className="text-lg md:text-xl mb-4 line-clamp-2 font-[GMarketSans]">
                     {highlightText(event.TITLE, searchKeyword)}
                 </h3>
 

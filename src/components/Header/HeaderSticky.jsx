@@ -17,7 +17,7 @@ const HeaderSticky = ({ activeTab, setActiveTab, scrolled }) => {
                     setActiveTab={setActiveTab}
                     scrolled
                 />
-                <h1 className="text-base md:text-2xl font-bold font-[MaruBuri]">
+                <h1 className="text-base md:text-2xl font-[GMarketSans]">
                     서울시 문화행사
                 </h1>
             </div>

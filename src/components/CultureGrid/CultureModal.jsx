@@ -149,7 +149,7 @@ const CultureModal = ({ event, onClose }) => {
                     >
                         <div className="absolute inset-0 bg-black/40"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                        <h2 className="modal-item text-white text-lg md:text-2xl font-bold text-center font-[MaruBuri] break-keep z-10">
+                        <h2 className="modal-item text-white text-lg md:text-3xl text-center font-[GMarketSans] break-keep z-10">
                             {event.TITLE}
                         </h2>
                     </div>
