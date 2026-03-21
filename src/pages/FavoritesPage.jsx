@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import CultureGrid from '../components/CultureGrid/CultureGrid';
-import CultureModal from '../components/CultureGrid/CultureModal';
 import Pagination from '../ui/Pagination';
 import { useFavoritesStore } from '../store/favorites';
 import { getPageSize } from '../utils/pageSize';
 
-const FavoritesPage = () => {
-    const [selected, setSelected] = useState(null);
+const FavoritesPage = ({ onSelect }) => {
     const [page, setPage] = useState(1);
     const favorites = useFavoritesStore((s) => s.favorites);
 
@@ -35,7 +33,7 @@ const FavoritesPage = () => {
                 </h2>
             </div>
 
-            <CultureGrid data={pagedFavorites} onSelect={setSelected} />
+            <CultureGrid data={pagedFavorites} onSelect={onSelect} />
 
             {totalPages > 1 && (
                 <Pagination
@@ -44,13 +42,6 @@ const FavoritesPage = () => {
                     onFirst={() => setPage(1)}
                     onPrev={() => setPage((p) => Math.max(1, p - 1))}
                     onNext={() => setPage((p) => Math.min(totalPages, p + 1))}
-                />
-            )}
-
-            {selected && (
-                <CultureModal
-                    event={selected}
-                    onClose={() => setSelected(null)}
                 />
             )}
         </section>

@@ -6,7 +6,8 @@ const CultureGrid = ({ data, onSelect, searchKeyword }) => {
     const gridRef = useRef(null);
 
     useEffect(() => {
-        const cards = gridRef.current?.children;
+        const cards = gridRef.current?.querySelectorAll('.card-item');
+        if (!cards) return;
 
         gsap.fromTo(
             cards,
@@ -30,12 +31,13 @@ const CultureGrid = ({ data, onSelect, searchKeyword }) => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
             {data.map((event) => (
-                <CultureCard
-                    key={event.id}
-                    event={event}
-                    onSelect={onSelect}
-                    searchKeyword={searchKeyword}
-                />
+                <div key={event.id} className="card-item">
+                    <CultureCard
+                        event={event}
+                        onSelect={onSelect}
+                        searchKeyword={searchKeyword}
+                    />
+                </div>
             ))}
         </section>
     );

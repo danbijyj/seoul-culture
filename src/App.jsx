@@ -5,10 +5,12 @@ import ExplorePage from './pages/ExplorePage';
 import FavoritesPage from './pages/FavoritesPage';
 import Footer from './components/Footer/Footer';
 import TopButton from './components/TopButton/TopButton';
+import CultureModal from './components/CultureGrid/CultureModal';
 
 const App = () => {
     const [activeTab, setActiveTab] = useState('explore');
     const [scrolled, setScrolled] = useState(false);
+    const [selected, setSelected] = useState(null);
 
     useEffect(() => {
         const onScroll = () => {
@@ -31,9 +33,22 @@ const App = () => {
                 setActiveTab={setActiveTab}
                 scrolled={scrolled}
             />
+
             <main>
-                {activeTab === 'explore' ? <ExplorePage /> : <FavoritesPage />}
+                {activeTab === 'explore' ? (
+                    <ExplorePage onSelect={setSelected} />
+                ) : (
+                    <FavoritesPage onSelect={setSelected} />
+                )}
             </main>
+
+            {selected && (
+                <CultureModal
+                    event={selected}
+                    onClose={() => setSelected(null)}
+                />
+            )}
+
             <Footer />
             <TopButton />
         </>

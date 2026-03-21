@@ -2,7 +2,6 @@ import { useCallback, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import CultureGrid from '../components/CultureGrid/CultureGrid';
-import CultureModal from '../components/CultureGrid/CultureModal';
 import FilterBar from '../ui/FilterBar';
 import SearchBar from '../ui/SearchBar';
 import Pagination from '../ui/Pagination';
@@ -19,8 +18,7 @@ const DEFAULT_FILTERS = {
     keyword: '',
 };
 
-const ExplorePage = () => {
-    const [selected, setSelected] = useState(null);
+const ExplorePage = ({ onSelect }) => {
     const [page, setPage] = useState(1);
     const [filters, setFilters] = useState(DEFAULT_FILTERS);
 
@@ -109,7 +107,7 @@ const ExplorePage = () => {
 
             <CultureGrid
                 data={pagedExplore}
-                onSelect={setSelected}
+                onSelect={onSelect}
                 searchKeyword={debouncedKeyword}
             />
 
@@ -120,13 +118,6 @@ const ExplorePage = () => {
                     onFirst={() => setPage(1)}
                     onPrev={() => setPage((p) => Math.max(1, p - 1))}
                     onNext={() => setPage((p) => Math.min(totalPages, p + 1))}
-                />
-            )}
-
-            {selected && (
-                <CultureModal
-                    event={selected}
-                    onClose={() => setSelected(null)}
                 />
             )}
         </section>
