@@ -2,14 +2,12 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Tabs from './Tabs';
 
-const Header = ({ activeTab, setActiveTab }) => {
+const Header = ({ activeTab, setActiveTab, scrolled }) => {
     const headerRef = useRef(null);
     const bgRef = useRef(null);
     const line1Ref = useRef(null);
     const line2Ref = useRef(null);
     const line3Ref = useRef(null);
-    const exploreRef = useRef(null);
-    const favoritesRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -44,18 +42,6 @@ const Header = ({ activeTab, setActiveTab }) => {
                 { y: 0, opacity: 0.7, duration: 0.8, ease: 'power3.out' },
                 '-=0.3',
             );
-
-            gsap.fromTo(
-                [exploreRef.current, favoritesRef.current],
-                { opacity: 0 },
-                {
-                    opacity: 1,
-                    duration: 1,
-                    stagger: 0.2,
-                    delay: 0.8,
-                    ease: 'power1.out',
-                },
-            );
         }, headerRef);
 
         return () => ctx.revert();
@@ -84,8 +70,7 @@ const Header = ({ activeTab, setActiveTab }) => {
                         <Tabs
                             activeTab={activeTab}
                             setActiveTab={setActiveTab}
-                            exploreRef={exploreRef}
-                            favoritesRef={favoritesRef}
+                            scrolled={scrolled}
                         />
                         <div className="text-center lg:text-right">
                             <h1

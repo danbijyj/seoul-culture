@@ -26,7 +26,11 @@ const App = () => {
                 setActiveTab={setActiveTab}
                 scrolled={scrolled}
             />
-            <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+            <Header
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                scrolled={scrolled}
+            />
             <main>
                 {activeTab === 'explore' ? <ExplorePage /> : <FavoritesPage />}
             </main>

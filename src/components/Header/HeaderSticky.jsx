@@ -3,7 +3,7 @@ import Tabs from './Tabs';
 const HeaderSticky = ({ activeTab, setActiveTab, scrolled }) => {
     return (
         <header
-            className={`fixed top-0 left-0 w-full h-15 md:h-17 z-50 shadow-lg transition-transform duration-300 ${
+            className={`fixed top-0 left-0 w-full h-15 md:h-17 z-50 shadow-lg overflow-hidden transition-transform duration-300 ${
                 scrolled ? 'translate-y-0' : '-translate-y-full'
             }`}
         >
