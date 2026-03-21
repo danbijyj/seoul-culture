@@ -49,6 +49,11 @@ const CultureCard = ({ event, onSelect, searchKeyword }) => {
     };
 
     const handleMouseEnter = () => {
+        gsap.to(cardRef.current, {
+            z: 20,
+            duration: 0.3,
+        });
+
         gsap.to(glowRef.current, {
             opacity: 1,
             duration: 0.2,
@@ -65,7 +70,8 @@ const CultureCard = ({ event, onSelect, searchKeyword }) => {
         gsap.to(cardRef.current, {
             rotateX: 0,
             rotateY: 0,
-            duration: 0.4,
+            z: 0,
+            duration: 0.3,
             ease: 'power3.out',
         });
 
@@ -96,11 +102,11 @@ const CultureCard = ({ event, onSelect, searchKeyword }) => {
             <div
                 ref={glowRef}
                 className="pointer-events-none absolute top-0 left-0
-                           w-80 h-80 rounded-full
-                        bg-[radial-gradient(circle,rgba(255,255,255,0.7)_0%,rgba(255,255,255,0.3)_30%,transparent_70%)]
+                           w-60 h-60 rounded-full
+                        bg-[radial-gradient(circle,rgba(255,255,255,1)_0%,rgba(255,255,255,0.9)_10%,rgba(255,255,255,0.4)_25%,transparent_50%)]
                         opacity-0
                         mix-blend-overlay
-                        blur-xl
+                        blur-lg
                         z-20
     "
             />
@@ -131,7 +137,7 @@ const CultureCard = ({ event, onSelect, searchKeyword }) => {
                 <p className="text-xl">자세히 보기</p>
             </div>
 
-            <div className="[transform:translateZ(30px)]">
+            <div className="[transform:translateZ(40px)]">
                 <h3 className="text-lg md:text-xl font-bold mb-4 line-clamp-2 font-[MaruBuri]">
                     {highlightText(event.TITLE, searchKeyword)}
                 </h3>

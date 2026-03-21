@@ -19,9 +19,7 @@ const CultureModal = ({ event, onClose }) => {
                 ease: 'power3.out',
             },
         );
-    }, []);
 
-    useEffect(() => {
         gsap.fromTo(
             overlayRef.current,
             { opacity: 0, backdropFilter: 'blur(0px)' },
@@ -32,33 +30,65 @@ const CultureModal = ({ event, onClose }) => {
                 ease: 'power2.out',
             },
         );
-    }, []);
 
-    useEffect(() => {
+        const items = modalRef.current.querySelectorAll('.modal-item');
+
         gsap.fromTo(
-            '.modal-item',
+            items,
             { y: 50, opacity: 0 },
             {
                 y: 0,
                 opacity: 1,
                 duration: 0.6,
-                stagger: 0.2,
+                stagger: 0.15,
                 ease: 'power3.out',
                 delay: 0.2,
-                clearProps: 'all',
             },
         );
     }, []);
 
+    const handleCloseWithAnimation = () => {
+        const items = modalRef.current.querySelectorAll('.modal-item');
+
+        const tl = gsap.timeline({
+            onComplete: onClose,
+        });
+
+        tl.to(items, {
+            opacity: 0,
+            y: 20,
+            duration: 0.2,
+            stagger: 0.05,
+        })
+            .to(
+                modalRef.current,
+                {
+                    y: 60,
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: 'power2.in',
+                },
+                '-=0.1',
+            )
+            .to(
+                overlayRef.current,
+                {
+                    opacity: 0,
+                    duration: 0.3,
+                },
+                '<',
+            );
+    };
+
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (e.key === 'Escape') onClose();
+            if (e.key === 'Escape') handleCloseWithAnimation();
         };
         document.addEventListener('keydown', handleKeyDown);
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [onClose]);
+    }, []);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -71,7 +101,7 @@ const CultureModal = ({ event, onClose }) => {
 
     const handleOverlayClick = (e) => {
         if (e.target === e.currentTarget) {
-            onClose();
+            handleCloseWithAnimation();
         }
     };
 
@@ -79,7 +109,7 @@ const CultureModal = ({ event, onClose }) => {
         <div
             ref={overlayRef}
             className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
-            onClick={handleOverlayClick}
+            onClick={handleCloseWithAnimation}
             role="dialog"
             aria-modal="true"
         >
@@ -103,7 +133,7 @@ const CultureModal = ({ event, onClose }) => {
                             hover:scale-110 hover:rotate-90
                             z-10
                         "
-                        onClick={onClose}
+                        onClick={handleCloseWithAnimation}
                         aria-label="모달 닫기"
                     >
                         <BiSolidXSquare className="text-white cursor-pointer" />
