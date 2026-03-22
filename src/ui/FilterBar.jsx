@@ -13,11 +13,7 @@ const FilterBar = ({
     );
 
     return (
-        <div
-            className="mb-4 grid 
-        grid-cols-2 lg:grid-cols-5 
-        gap-2 lg:gap-6"
-        >
+        <div className="mb-4 grid grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-6">
             <SelectBox
                 value={filters.gu}
                 onChange={(e) => onChange('gu', e.target.value)}

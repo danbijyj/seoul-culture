@@ -7,7 +7,7 @@ const HeaderSticky = ({ activeTab, setActiveTab, scrolled }) => {
                 scrolled ? 'translate-y-0' : '-translate-y-full'
             }`}
         >
-            <div className="absolute inset-0 bg-[url('/images/bg_small.png')] bg-cover bg-center opacity-80" />
+            <div className="absolute inset-0 bg-[url('/images/bg_small.png')] bg-cover bg-center opacity-70" />
 
             <div className="absolute inset-0 backdrop-blur-md" />
 
