@@ -50,7 +50,7 @@ const App = () => {
             )}
 
             <Footer />
-            <TopButton />
+            <TopButton isModalOpen={!!selected} />
         </>
     );
 };

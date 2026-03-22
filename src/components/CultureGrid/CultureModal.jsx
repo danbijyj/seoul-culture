@@ -99,12 +99,6 @@ const CultureModal = ({ event, onClose }) => {
 
     if (!event) return null;
 
-    const handleOverlayClick = (e) => {
-        if (e.target === e.currentTarget) {
-            handleCloseWithAnimation();
-        }
-    };
-
     return (
         <div
             ref={overlayRef}
@@ -172,7 +166,7 @@ const CultureModal = ({ event, onClose }) => {
                         </div>
 
                         {event.PROGRAM?.trim() && (
-                            <div className="modal-item">
+                            <div>
                                 <h3 className="text-lg font-bold mb-2">
                                     프로그램소개
                                 </h3>
@@ -183,7 +177,7 @@ const CultureModal = ({ event, onClose }) => {
                         )}
 
                         {event.PLAYER?.trim() && (
-                            <div className="modal-item">
+                            <div>
                                 <h3 className="text-lg font-bold mb-2">
                                     출연자 정보
                                 </h3>
@@ -193,20 +187,22 @@ const CultureModal = ({ event, onClose }) => {
                             </div>
                         )}
 
-                        <div className="modal-item">
-                            <ModalMap event={event} />
-                        </div>
+                        <ModalMap event={event} />
 
                         {event.ORG_LINK && (
                             <a
                                 className="
-                                    modal-item
                                     bg-main-blue text-white 
-                                    py-2 md:py-4 w-45 md:w-70 
+                                    py-2 md:py-4 
+                                    w-45 md:w-70 
                                     mb-16 md:mb-25
                                     text-center m-auto 
-                                    transition duration-300
-                                    hover:bg-main-blue/80 hover:scale-105
+                                    transform will-change-transform
+                                    transition-all duration-200 ease-out
+                                  hover:bg-main-blue/90
+                                    hover:-translate-y-1
+                                    hover:shadow-lg
+                                    active:scale-95
                                 "
                                 href={event.ORG_LINK}
                                 target="_blank"
